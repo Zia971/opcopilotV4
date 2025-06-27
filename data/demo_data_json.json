@@ -1,0 +1,442 @@
+{
+  "aco_demo": {
+    "nom": "Marie-Claire ADMIN",
+    "email": "mc.admin@spic-guadeloupe.fr",
+    "telephone": "+590 590 12 34 56",
+    "date_embauche": "2018-03-15",
+    "specialites": ["OPP", "VEFA", "MANDAT_ETUDES"],
+    "secteur": "Les Abymes - Pointe-à-Pitre"
+  },
+  "operations_demo": [
+    {
+      "id": 1,
+      "nom": "COUR CHARNEAU",
+      "type_operation": "OPP",
+      "aco_responsable": "Marie-Claire ADMIN",
+      "commune": "Les Abymes",
+      "adresse": "Rue de la République, Cour Charneau",
+      "parcelle_cadastrale": "AE 247",
+      "nb_logements_total": 48,
+      "nb_lls": 32,
+      "nb_lts": 0,
+      "nb_pls": 16,
+      "nb_pli": 0,
+      "type_logement": "Collectif",
+      "budget_total": 2450000,
+      "rem_totale_prevue": 147000,
+      "date_creation": "2023-01-15",
+      "date_debut_prevue": "2023-02-01",
+      "date_fin_prevue": "2025-08-31",
+      "statut": "EN_COURS",
+      "avancement": 85,
+      "freins_actifs": 1
+    },
+    {
+      "id": 2,
+      "nom": "RÉSIDENCE SOLEIL",
+      "type_operation": "OPP",
+      "aco_responsable": "Marie-Claire ADMIN",
+      "commune": "Pointe-à-Pitre",
+      "adresse": "Boulevard Légitimus",
+      "parcelle_cadastrale": "AC 156",
+      "nb_logements_total": 32,
+      "nb_lls": 24,
+      "nb_lts": 8,
+      "nb_pls": 0,
+      "nb_pli": 0,
+      "type_logement": "Mixte",
+      "budget_total": 1890000,
+      "rem_totale_prevue": 113400,
+      "date_creation": "2022-09-10",
+      "date_debut_prevue": "2022-10-01",
+      "date_fin_prevue": "2024-12-31",
+      "statut": "EN_RECEPTION",
+      "avancement": 95,
+      "freins_actifs": 0
+    },
+    {
+      "id": 3,
+      "nom": "MANDAT ÉCOLE MATERNELLE",
+      "type_operation": "MANDAT_ETUDES",
+      "aco_responsable": "Marie-Claire ADMIN",
+      "commune": "Basse-Terre",
+      "adresse": "Rue Schoelcher",
+      "objet_mandat": "École maternelle 6 classes + restaurant scolaire",
+      "mandant": "Commune de Basse-Terre",
+      "duree_mandat_mois": 12,
+      "budget_total": 150000,
+      "rem_totale_prevue": 22500,
+      "date_creation": "2024-01-20",
+      "date_debut_prevue": "2024-02-01",
+      "date_fin_prevue": "2025-01-31",
+      "statut": "EN_COURS",
+      "avancement": 45,
+      "freins_actifs": 0
+    },
+    {
+      "id": 4,
+      "nom": "VEFA BELCOURT",
+      "type_operation": "VEFA",
+      "aco_responsable": "Marie-Claire ADMIN",
+      "commune": "Sainte-Anne",
+      "adresse": "Quartier Belcourt",
+      "promoteur_nom": "SOGEPROM Antilles",
+      "nb_logements_reserves": 24,
+      "prix_total_reservation": 1200000,
+      "date_creation": "2024-06-01",
+      "date_debut_prevue": "2024-07-01",
+      "date_fin_prevue": "2026-06-30",
+      "statut": "EN_MONTAGE",
+      "avancement": 12,
+      "freins_actifs": 0
+    }
+  ],
+  "phases_demo": {
+    "operation_1": [
+      {
+        "ordre": 1,
+        "nom": "Opportunité foncière identifiée",
+        "statut": "VALIDEE",
+        "date_debut_prevue": "2023-01-15",
+        "date_fin_prevue": "2023-01-22",
+        "date_debut_reelle": "2023-01-15",
+        "date_fin_reelle": "2023-01-20",
+        "responsable": "Marie-Claire ADMIN",
+        "est_critique": true
+      },
+      {
+        "ordre": 2,
+        "nom": "Faisabilité technique et financière",
+        "statut": "VALIDEE",
+        "date_debut_prevue": "2023-01-23",
+        "date_fin_prevue": "2023-02-06",
+        "date_debut_reelle": "2023-01-21",
+        "date_fin_reelle": "2023-02-03",
+        "responsable": "Marie-Claire ADMIN",
+        "est_critique": true
+      },
+      {
+        "ordre": 3,
+        "nom": "Validation programme par SPIC",
+        "statut": "VALIDEE",
+        "date_debut_prevue": "2023-02-07",
+        "date_fin_prevue": "2023-02-14",
+        "date_debut_reelle": "2023-02-04",
+        "date_fin_reelle": "2023-02-10",
+        "responsable": "Direction SPIC",
+        "est_critique": true
+      },
+      {
+        "ordre": 32,
+        "nom": "OS travaux",
+        "statut": "VALIDEE",
+        "date_debut_prevue": "2023-12-01",
+        "date_fin_prevue": "2023-12-08",
+        "date_debut_reelle": "2023-12-01",
+        "date_fin_reelle": "2023-12-05",
+        "responsable": "Marie-Claire ADMIN",
+        "est_critique": true
+      },
+      {
+        "ordre": 35,
+        "nom": "Suivi chantier",
+        "statut": "EN_COURS",
+        "date_debut_prevue": "2023-12-15",
+        "date_fin_prevue": "2024-12-15",
+        "date_debut_reelle": "2023-12-15",
+        "date_fin_reelle": null,
+        "responsable": "MOE ARCHI-CONSEIL",
+        "est_critique": false
+      },
+      {
+        "ordre": 36,
+        "nom": "Demande LBU (Levée Bons à Usage)",
+        "statut": "EN_COURS",
+        "date_debut_prevue": "2024-10-01",
+        "date_fin_prevue": "2024-10-15",
+        "date_debut_reelle": "2024-10-01",
+        "date_fin_reelle": null,
+        "responsable": "Marie-Claire ADMIN",
+        "est_critique": true
+      },
+      {
+        "ordre": 38,
+        "nom": "Réception provisoire",
+        "statut": "EN_ATTENTE",
+        "date_debut_prevue": "2024-11-15",
+        "date_fin_prevue": "2024-11-22",
+        "date_debut_reelle": null,
+        "date_fin_reelle": null,
+        "responsable": "MOE ARCHI-CONSEIL",
+        "est_critique": true
+      }
+    ]
+  },
+  "rem_demo": {
+    "operation_1": [
+      {
+        "trimestre": "T1 2024",
+        "rem_projetee": 25000,
+        "rem_realisee": 24500,
+        "depenses_projetees": 150000,
+        "depenses_facturees": 148000,
+        "ecart_rem": -500,
+        "ecart_depenses": -2000,
+        "avancement_rem": 98,
+        "avancement_travaux": 99
+      },
+      {
+        "trimestre": "T2 2024",
+        "rem_projetee": 30000,
+        "rem_realisee": 32000,
+        "depenses_projetees": 200000,
+        "depenses_facturees": 205000,
+        "ecart_rem": 2000,
+        "ecart_depenses": 5000,
+        "avancement_rem": 107,
+        "avancement_travaux": 103
+      },
+      {
+        "trimestre": "T3 2024",
+        "rem_projetee": 40000,
+        "rem_realisee": 38000,
+        "depenses_projetees": 300000,
+        "depenses_facturees": 295000,
+        "ecart_rem": -2000,
+        "ecart_depenses": -5000,
+        "avancement_rem": 95,
+        "avancement_travaux": 98
+      },
+      {
+        "trimestre": "T4 2024",
+        "rem_projetee": 50000,
+        "rem_realisee": 0,
+        "depenses_projetees": 400000,
+        "depenses_facturees": 0,
+        "ecart_rem": 0,
+        "ecart_depenses": 0,
+        "avancement_rem": 0,
+        "avancement_travaux": 0
+      }
+    ]
+  },
+  "avenants_demo": {
+    "operation_1": [
+      {
+        "numero": "AVT-001",
+        "date": "2024-03-15",
+        "motif": "Modification programme",
+        "description": "Ajout 2 logements T3 suite demande locative",
+        "impact_budget": 15000,
+        "impact_delai": 0,
+        "statut": "VALIDE",
+        "validateur": "Direction SPIC"
+      },
+      {
+        "numero": "AVT-002",
+        "date": "2024-05-22",
+        "motif": "Délai supplémentaire",
+        "description": "Retard livraison matériaux - COVID",
+        "impact_budget": 0,
+        "impact_delai": 30,
+        "statut": "EN_COURS",
+        "validateur": "En attente validation"
+      },
+      {
+        "numero": "AVT-003",
+        "date": "2024-08-10",
+        "motif": "Plus-value travaux",
+        "description": "Renforcement structure suite étude géotechnique",
+        "impact_budget": 25000,
+        "impact_delai": 15,
+        "statut": "BROUILLON",
+        "validateur": "À valider"
+      }
+    ]
+  },
+  "med_demo": {
+    "operation_1": [
+      {
+        "reference": "MED-2024-001",
+        "type": "MED_MOE",
+        "destinataire": "ARCHI-CONSEIL",
+        "motif": "Retard remise études APD",
+        "date_envoi": "2024-08-12",
+        "delai_conformite": 15,
+        "statut": "EN_ATTENTE_REPONSE",
+        "relance_effectuee": true,
+        "date_relance": "2024-08-27"
+      },
+      {
+        "reference": "MED-2024-002",
+        "type": "MED_ENTREPRISE",
+        "destinataire": "BATIR-PLUS",
+        "motif": "Malfaçons étanchéité",
+        "date_envoi": "2024-08-25",
+        "delai_conformite": 10,
+        "statut": "RESOLU",
+        "date_resolution": "2024-09-02"
+      }
+    ]
+  },
+  "concessionnaires_demo": {
+    "operation_1": {
+      "EDF": {
+        "statut_global": "EN_COURS",
+        "etapes": [
+          {"nom": "Demande raccordement", "statut": "VALIDEE", "date": "2024-03-15"},
+          {"nom": "Devis raccordement", "statut": "VALIDEE", "date": "2024-03-28"},
+          {"nom": "Validation devis", "statut": "VALIDEE", "date": "2024-04-02"},
+          {"nom": "Travaux raccordement", "statut": "EN_COURS", "date": null},
+          {"nom": "Mise en service", "statut": "EN_ATTENTE", "date": null}
+        ]
+      },
+      "EAU": {
+        "statut_global": "PLANIFIE",
+        "etapes": [
+          {"nom": "Demande branchement", "statut": "VALIDEE", "date": "2024-03-20"},
+          {"nom": "Étude réseau", "statut": "VALIDEE", "date": "2024-04-05"},
+          {"nom": "Travaux branchement", "statut": "PLANIFIE", "date": "Semaine 35"},
+          {"nom": "Essais réseau", "statut": "EN_ATTENTE", "date": null},
+          {"nom": "Mise en service", "statut": "EN_ATTENTE", "date": null}
+        ]
+      },
+      "FIBRE": {
+        "statut_global": "EN_COURS",
+        "etapes": [
+          {"nom": "Demande raccordement", "statut": "VALIDEE", "date": "2024-04-10"},
+          {"nom": "Étude faisabilité", "statut": "EN_COURS", "date": "En attente retour"},
+          {"nom": "Installation réseau", "statut": "EN_ATTENTE", "date": null},
+          {"nom": "Tests connexion", "statut": "EN_ATTENTE", "date": null},
+          {"nom": "Mise en service", "statut": "EN_ATTENTE", "date": null}
+        ]
+      }
+    }
+  },
+  "dgd_demo": {
+    "operation_1": {
+      "lots": [
+        {
+          "nom": "Gros Œuvre",
+          "marche_initial": 850000,
+          "quantites_reelles": 98,
+          "plus_moins_value": -17000,
+          "penalites": 0,
+          "montant_final": 833000,
+          "statut": "VALIDE_ENTREPRISE"
+        },
+        {
+          "nom": "Plomberie",
+          "marche_initial": 120000,
+          "quantites_reelles": 102,
+          "plus_moins_value": 2400,
+          "penalites": 0,
+          "montant_final": 122400,
+          "statut": "VALIDE_ENTREPRISE"
+        },
+        {
+          "nom": "Électricité",
+          "marche_initial": 95000,
+          "quantites_reelles": 105,
+          "plus_moins_value": 4750,
+          "penalites": 0,
+          "montant_final": 99750,
+          "statut": "EN_VERIFICATION_MOE"
+        },
+        {
+          "nom": "Peinture",
+          "marche_initial": 45000,
+          "quantites_reelles": 95,
+          "plus_moins_value": -2250,
+          "penalites": 1000,
+          "montant_final": 41750,
+          "statut": "EN_ATTENTE_VALIDATION"
+        }
+      ],
+      "synthese": {
+        "montant_initial": 1110000,
+        "plus_moins_values": -12100,
+        "penalites": -1000,
+        "montant_final": 1096900,
+        "ecart_pourcentage": -1.2
+      }
+    }
+  },
+  "gpa_demo": {
+    "operation_2": [
+      {
+        "date": "2024-08-12",
+        "logement": "A101",
+        "type": "Plomberie",
+        "description": "Fuite robinet cuisine",
+        "locataire": "Mme MARIE",
+        "statut": "RESOLU",
+        "delai_intervention": 2,
+        "entreprise": "PLOMBERIE EXPERT",
+        "date_resolution": "2024-08-14"
+      },
+      {
+        "date": "2024-08-18",
+        "logement": "B205",
+        "type": "Électricité",
+        "description": "Prise défectueuse salon",
+        "locataire": "M. JOSEPH",
+        "statut": "EN_COURS",
+        "delai_intervention": 5,
+        "entreprise": "ELEC-SERVICES"
+      },
+      {
+        "date": "2024-08-25",
+        "logement": "C304",
+        "type": "Peinture",
+        "description": "Écaillage mur chambre",
+        "locataire": "Famille DUBOIS",
+        "statut": "SIGNALE",
+        "delai_intervention": 1,
+        "entreprise": "PEINTURE MODERNE"
+      }
+    ]
+  },
+  "alertes_demo": [
+    {
+      "operation": "COUR CHARNEAU",
+      "type": "CRITIQUE",
+      "message": "Retard MOE 5 jours sur phase LBU",
+      "date": "2024-08-26",
+      "action_requise": "Relance urgente MOE"
+    },
+    {
+      "operation": "RÉSIDENCE SOLEIL",
+      "type": "WARNING",
+      "message": "Validation DGD requise",
+      "date": "2024-08-25",
+      "action_requise": "Validation hiérarchique"
+    },
+    {
+      "operation": "VEFA BELCOURT",
+      "type": "INFO",
+      "message": "RDV promoteur demain 14h",
+      "date": "2024-08-26",
+      "action_requise": "Participation réunion"
+    }
+  ],
+  "kpis_aco_demo": {
+    "operations_actives": 23,
+    "operations_cloturees": 5,
+    "rem_realisee_2024": 485000,
+    "rem_prevue_2024": 620000,
+    "taux_realisation_rem": 78,
+    "freins_actifs": 3,
+    "freins_critiques": 2,
+    "phases_retard": 8,
+    "validations_requises": 12,
+    "echeances_semaine": 5
+  },
+  "activite_mensuelle_demo": {
+    "mois": ["Jan", "Fév", "Mar", "Avr", "Mai", "Jun", "Jul", "Aoû", "Sep"],
+    "rem_mensuelle": [45000, 52000, 48000, 55000, 61000, 58000, 49000, 67000, 52000],
+    "operations_actives": [18, 19, 21, 22, 24, 23, 25, 24, 23],
+    "phases_validees": [12, 15, 18, 22, 28, 25, 19, 31, 27],
+    "alertes_resolues": [3, 5, 4, 7, 9, 6, 4, 8, 5]
+  }
+}

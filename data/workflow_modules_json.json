@@ -1,0 +1,899 @@
+{
+  "workflow_rem": {
+    "nom": "Module REM - Suivi Trimestriel",
+    "description": "Workflow de suivi trimestriel REM et dépenses travaux",
+    "etapes": [
+      {
+        "ordre": 1,
+        "nom": "Alerte fin de trimestre",
+        "description": "Système génère alerte automatique fin de trimestre",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Génération alerte automatique",
+          "Notification ACO par email",
+          "Mise à jour dashboard"
+        ]
+      },
+      {
+        "ordre": 2,
+        "nom": "Accès module REM",
+        "description": "ACO accède au module REM de l'opération",
+        "responsable": "ACO",
+        "delai_jours": 3,
+        "actions": [
+          "Navigation vers opération",
+          "Ouverture onglet REM",
+          "Vérification données précédentes"
+        ]
+      },
+      {
+        "ordre": 3,
+        "nom": "Saisie données trimestrielles",
+        "description": "Saisie REM réalisée et dépenses travaux facturées",
+        "responsable": "ACO",
+        "delai_jours": 5,
+        "actions": [
+          "Saisie REM réalisée du trimestre",
+          "Saisie dépenses travaux facturées",
+          "Ajout commentaires si nécessaire"
+        ]
+      },
+      {
+        "ordre": 4,
+        "nom": "Calcul automatique écarts",
+        "description": "Système calcule écarts vs prévisionnel",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Calcul écarts REM réalisée/projetée",
+          "Calcul écarts dépenses facturées/projetées",
+          "Calcul pourcentages d'avancement"
+        ]
+      },
+      {
+        "ordre": 5,
+        "nom": "Génération graphiques",
+        "description": "Génération automatique des graphiques d'évolution",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Graphique évolution REM",
+          "Graphique évolution dépenses",
+          "Courbes de tendance"
+        ]
+      },
+      {
+        "ordre": 6,
+        "nom": "Validation ACO",
+        "description": "Validation finale par l'ACO",
+        "responsable": "ACO",
+        "delai_jours": 1,
+        "actions": [
+          "Vérification cohérence données",
+          "Validation définitive",
+          "Sauvegarde automatique"
+        ]
+      },
+      {
+        "ordre": 7,
+        "nom": "Analyse corrélation",
+        "description": "Analyse automatique corrélation REM/Travaux",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Comparaison avancement REM vs Travaux",
+          "Détection écarts > 15%",
+          "Génération alertes si nécessaire"
+        ]
+      },
+      {
+        "ordre": 8,
+        "nom": "Mise à jour dashboard",
+        "description": "Mise à jour automatique du dashboard",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Mise à jour KPIs ACO",
+          "Actualisation graphiques dashboard",
+          "Notification validation terminée"
+        ]
+      }
+    ],
+    "alertes": [
+      {
+        "type": "ECART_CRITIQUE",
+        "seuil": 15,
+        "description": "Écart > 15% entre REM et Travaux",
+        "action": "Alerte immédiate ACO + hiérarchie"
+      },
+      {
+        "type": "RETARD_SAISIE",
+        "seuil": 7,
+        "description": "Retard > 7 jours dans saisie trimestrielle",
+        "action": "Relance automatique ACO"
+      }
+    ]
+  },
+  "workflow_avenants": {
+    "nom": "Module Avenants - Gestion Modifications",
+    "description": "Workflow de création et validation d'avenants",
+    "etapes": [
+      {
+        "ordre": 1,
+        "nom": "Création avenant",
+        "description": "ACO initie la création d'un nouvel avenant",
+        "responsable": "ACO",
+        "delai_jours": 1,
+        "actions": [
+          "Sélection motif prédéfini",
+          "Saisie description détaillée",
+          "Estimation impact budget/délai"
+        ]
+      },
+      {
+        "ordre": 2,
+        "nom": "Analyse impact planning",
+        "description": "Analyse automatique impact sur planning",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Identification phases impactées",
+          "Recalcul automatique timeline",
+          "Génération rapport impact"
+        ]
+      },
+      {
+        "ordre": 3,
+        "nom": "Calcul impact financier",
+        "description": "Calcul automatique impact budget et REM",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Calcul plus/moins-value",
+          "Recalcul REM automatique",
+          "Mise à jour prévisionnel"
+        ]
+      },
+      {
+        "ordre": 4,
+        "nom": "Validation technique",
+        "description": "Validation technique par responsable technique",
+        "responsable": "RESPONSABLE_TECHNIQUE",
+        "delai_jours": 3,
+        "actions": [
+          "Vérification faisabilité technique",
+          "Validation cohérence avec projet",
+          "Approbation ou refus motivé"
+        ]
+      },
+      {
+        "ordre": 5,
+        "nom": "Validation financière",
+        "description": "Validation financière si impact budget",
+        "responsable": "RESPONSABLE_FINANCIER",
+        "delai_jours": 5,
+        "actions": [
+          "Vérification enveloppe budgétaire",
+          "Validation financement complémentaire",
+          "Approbation budgétaire"
+        ]
+      },
+      {
+        "ordre": 6,
+        "nom": "Validation hiérarchique",
+        "description": "Validation par hiérarchie selon montant",
+        "responsable": "HIERARCHIE",
+        "delai_jours": 7,
+        "actions": [
+          "Validation direction si > seuil",
+          "Validation conseil administration si nécessaire",
+          "Décision finale"
+        ]
+      },
+      {
+        "ordre": 7,
+        "nom": "Génération document",
+        "description": "Génération automatique document Word",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Chargement template Word",
+          "Remplissage données avenant",
+          "Génération PDF final"
+        ]
+      },
+      {
+        "ordre": 8,
+        "nom": "Notification parties",
+        "description": "Notification automatique parties prenantes",
+        "responsable": "SYSTEME",
+        "delai_jours": 1,
+        "actions": [
+          "Envoi email entreprises concernées",
+          "Notification MOE",
+          "Mise à jour dossier opération"
+        ]
+      },
+      {
+        "ordre": 9,
+        "nom": "Mise à jour opération",
+        "description": "Mise à jour automatique données opération",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Mise à jour budget opération",
+          "Recalcul planning phases",
+          "Actualisation timeline"
+        ]
+      }
+    ],
+    "seuils_validation": [
+      {
+        "type": "IMPACT_BUDGET",
+        "seuil_montant": 10000,
+        "validateur": "RESPONSABLE_FINANCIER"
+      },
+      {
+        "type": "IMPACT_DELAI",
+        "seuil_jours": 30,
+        "validateur": "RESPONSABLE_TECHNIQUE"
+      },
+      {
+        "type": "IMPACT_MAJEUR",
+        "seuil_montant": 50000,
+        "validateur": "DIRECTION"
+      }
+    ]
+  },
+  "workflow_med": {
+    "nom": "Module MED Automatisé",
+    "description": "Workflow de génération et suivi des mises en demeure",
+    "etapes": [
+      {
+        "ordre": 1,
+        "nom": "Identification besoin MED",
+        "description": "ACO identifie nécessité d'une mise en demeure",
+        "responsable": "ACO",
+        "delai_jours": 1,
+        "actions": [
+          "Constat retard ou non-conformité",
+          "Documentation du problème",
+          "Décision émission MED"
+        ]
+      },
+      {
+        "ordre": 2,
+        "nom": "Sélection type et motifs",
+        "description": "Sélection type MED et motifs prédéfinis",
+        "responsable": "ACO",
+        "delai_jours": 0,
+        "actions": [
+          "Choix type MED (MOE/SPS/OPC/Entreprise/CT)",
+          "Sélection motifs dans liste prédéfinie",
+          "Définition délai mise en conformité"
+        ]
+      },
+      {
+        "ordre": 3,
+        "nom": "Chargement template",
+        "description": "Chargement automatique template Word",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Sélection template selon type MED",
+          "Chargement modèle Word correspondant",
+          "Préparation remplissage automatique"
+        ]
+      },
+      {
+        "ordre": 4,
+        "nom": "Remplissage automatique",
+        "description": "Remplissage automatique données opération",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Insertion données opération",
+          "Remplissage informations destinataire",
+          "Calcul délais automatique"
+        ]
+      },
+      {
+        "ordre": 5,
+        "nom": "Compléments spécifiques",
+        "description": "ACO complète éléments spécifiques",
+        "responsable": "ACO",
+        "delai_jours": 1,
+        "actions": [
+          "Ajout détails spécifiques au cas",
+          "Personnalisation contenu",
+          "Vérification cohérence"
+        ]
+      },
+      {
+        "ordre": 6,
+        "nom": "Validation et génération",
+        "description": "Validation finale et génération PDF",
+        "responsable": "ACO",
+        "delai_jours": 1,
+        "actions": [
+          "Relecture finale",
+          "Validation contenu",
+          "Génération PDF définitif"
+        ]
+      },
+      {
+        "ordre": 7,
+        "nom": "Envoi automatique",
+        "description": "Envoi automatique par email avec accusé",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Envoi email avec PDF joint",
+          "Demande accusé de réception",
+          "Enregistrement date envoi"
+        ]
+      },
+      {
+        "ordre": 8,
+        "nom": "Programmation relances",
+        "description": "Programmation relances automatiques",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Calcul dates de relance",
+          "Programmation rappels automatiques",
+          "Configuration escalade"
+        ]
+      },
+      {
+        "ordre": 9,
+        "nom": "Suivi et tracking",
+        "description": "Suivi automatique délais et réponses",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Tracking délai réponse",
+          "Détection dépassement",
+          "Génération alertes"
+        ]
+      }
+    ],
+    "templates_med": [
+      {
+        "type": "MED_MOE",
+        "template": "template_med_moe.docx",
+        "motifs": [
+          "Retard remise études",
+          "Études non conformes",
+          "Absence réunions",
+          "Non respect planning"
+        ]
+      },
+      {
+        "type": "MED_ENTREPRISE",
+        "template": "template_med_entreprise.docx",
+        "motifs": [
+          "Retard démarrage travaux",
+          "Non respect planning",
+          "Malfaçons constatées",
+          "Absence sur chantier"
+        ]
+      },
+      {
+        "type": "MED_OPC",
+        "template": "template_med_opc.docx",
+        "motifs": [
+          "Défaut coordination",
+          "Planning non tenu",
+          "Rapports manquants"
+        ]
+      }
+    ]
+  },
+  "workflow_concessionnaires": {
+    "nom": "Module Concessionnaires",
+    "description": "Workflow de suivi des concessionnaires (EDF/Eau/Fibre)",
+    "concessionnaires": {
+      "EDF": {
+        "nom": "Électricité de France",
+        "etapes": [
+          {
+            "ordre": 1,
+            "nom": "Demande raccordement",
+            "description": "Dépôt demande raccordement électrique",
+            "delai_standard": 7,
+            "responsable": "ACO",
+            "documents": ["Formulaire demande", "Plans situation", "Puissance demandée"]
+          },
+          {
+            "ordre": 2,
+            "nom": "Étude technique EDF",
+            "description": "Étude technique par EDF",
+            "delai_standard": 21,
+            "responsable": "EDF",
+            "documents": ["Rapport étude technique"]
+          },
+          {
+            "ordre": 3,
+            "nom": "Devis raccordement",
+            "description": "Réception devis raccordement",
+            "delai_standard": 14,
+            "responsable": "EDF",
+            "documents": ["Devis détaillé", "Plan raccordement"]
+          },
+          {
+            "ordre": 4,
+            "nom": "Validation devis",
+            "description": "Validation et signature devis",
+            "delai_standard": 7,
+            "responsable": "ACO",
+            "documents": ["Devis signé", "Garantie financière"]
+          },
+          {
+            "ordre": 5,
+            "nom": "Travaux raccordement",
+            "description": "Réalisation travaux par EDF",
+            "delai_standard": 60,
+            "responsable": "EDF",
+            "documents": ["Planning travaux", "Rapports avancement"]
+          },
+          {
+            "ordre": 6,
+            "nom": "Mise en service",
+            "description": "Mise en service définitive",
+            "delai_standard": 7,
+            "responsable": "EDF",
+            "documents": ["Procès-verbal mise en service", "Certificat Consuel"]
+          }
+        ]
+      },
+      "EAU": {
+        "nom": "Compagnie des Eaux",
+        "etapes": [
+          {
+            "ordre": 1,
+            "nom": "Demande branchement",
+            "description": "Dépôt demande branchement eau",
+            "delai_standard": 7,
+            "responsable": "ACO",
+            "documents": ["Formulaire demande", "Plans réseaux"]
+          },
+          {
+            "ordre": 2,
+            "nom": "Étude réseau",
+            "description": "Étude capacité réseau existant",
+            "delai_standard": 21,
+            "responsable": "COMPAGNIE_EAU",
+            "documents": ["Rapport étude réseau"]
+          },
+          {
+            "ordre": 3,
+            "nom": "Travaux branchement",
+            "description": "Réalisation branchement",
+            "delai_standard": 30,
+            "responsable": "COMPAGNIE_EAU",
+            "documents": ["Planning travaux"]
+          },
+          {
+            "ordre": 4,
+            "nom": "Essais réseau",
+            "description": "Tests pression et qualité",
+            "delai_standard": 7,
+            "responsable": "COMPAGNIE_EAU",
+            "documents": ["Rapport essais"]
+          },
+          {
+            "ordre": 5,
+            "nom": "Mise en service",
+            "description": "Mise en service définitive",
+            "delai_standard": 3,
+            "responsable": "COMPAGNIE_EAU",
+            "documents": ["Procès-verbal mise en service"]
+          }
+        ]
+      },
+      "FIBRE": {
+        "nom": "Opérateur Fibre Optique",
+        "etapes": [
+          {
+            "ordre": 1,
+            "nom": "Demande raccordement",
+            "description": "Demande raccordement fibre",
+            "delai_standard": 7,
+            "responsable": "ACO",
+            "documents": ["Formulaire demande", "Plans bâtiment"]
+          },
+          {
+            "ordre": 2,
+            "nom": "Étude faisabilité",
+            "description": "Étude faisabilité technique",
+            "delai_standard": 14,
+            "responsable": "OPERATEUR_FIBRE",
+            "documents": ["Rapport faisabilité"]
+          },
+          {
+            "ordre": 3,
+            "nom": "Installation réseau",
+            "description": "Installation infrastructure fibre",
+            "delai_standard": 45,
+            "responsable": "OPERATEUR_FIBRE",
+            "documents": ["Planning installation"]
+          },
+          {
+            "ordre": 4,
+            "nom": "Tests connexion",
+            "description": "Tests qualité signal",
+            "delai_standard": 3,
+            "responsable": "OPERATEUR_FIBRE",
+            "documents": ["Rapport tests"]
+          },
+          {
+            "ordre": 5,
+            "nom": "Mise en service",
+            "description": "Activation services",
+            "delai_standard": 2,
+            "responsable": "OPERATEUR_FIBRE",
+            "documents": ["Certificat activation"]
+          }
+        ]
+      }
+    },
+    "alertes_delais": {
+      "RETARD_MINEUR": {
+        "seuil_jours": 7,
+        "action": "Relance automatique"
+      },
+      "RETARD_MAJEUR": {
+        "seuil_jours": 15,
+        "action": "Alerte ACO + contact téléphonique"
+      },
+      "RETARD_CRITIQUE": {
+        "seuil_jours": 30,
+        "action": "Escalade hiérarchique + réunion urgente"
+      }
+    }
+  },
+  "workflow_dgd": {
+    "nom": "Module DGD - Décompte Général Définitif",
+    "description": "Workflow d'établissement du décompte général définitif",
+    "etapes": [
+      {
+        "ordre": 1,
+        "nom": "Saisie quantités réelles",
+        "description": "Saisie quantités réellement exécutées par lot",
+        "responsable": "ACO",
+        "delai_jours": 7,
+        "actions": [
+          "Saisie quantités par lot de travaux",
+          "Comparaison avec quantités initiales",
+          "Identification plus/moins-values"
+        ]
+      },
+      {
+        "ordre": 2,
+        "nom": "Calcul écarts quantitatifs",
+        "description": "Calcul automatique des écarts",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Calcul écarts quantités",
+          "Application prix unitaires",
+          "Calcul plus/moins-values"
+        ]
+      },
+      {
+        "ordre": 3,
+        "nom": "Application révisions prix",
+        "description": "Application révisions de prix contractuelles",
+        "responsable": "SYSTEME",
+        "delai_jours": 1,
+        "actions": [
+          "Application indices révision",
+          "Calcul sur période d'exécution",
+          "Intégration au décompte"
+        ]
+      },
+      {
+        "ordre": 4,
+        "nom": "Calcul pénalités",
+        "description": "Calcul pénalités de retard",
+        "responsable": "ACO",
+        "delai_jours": 2,
+        "actions": [
+          "Calcul retards par lot",
+          "Application taux pénalités",
+          "Déduction du décompte"
+        ]
+      },
+      {
+        "ordre": 5,
+        "nom": "Validation entreprise",
+        "description": "Validation par l'entreprise",
+        "responsable": "ENTREPRISE",
+        "delai_jours": 15,
+        "actions": [
+          "Examen décompte",
+          "Observations éventuelles",
+          "Validation ou contestation"
+        ]
+      },
+      {
+        "ordre": 6,
+        "nom": "Vérification MOE",
+        "description": "Vérification par maîtrise d'œuvre",
+        "responsable": "MOE",
+        "delai_jours": 10,
+        "actions": [
+          "Contrôle cohérence quantités",
+          "Vérification calculs",
+          "Avis technique"
+        ]
+      },
+      {
+        "ordre": 7,
+        "nom": "Validation SPIC",
+        "description": "Validation finale par SPIC",
+        "responsable": "DIRECTION_SPIC",
+        "delai_jours": 7,
+        "actions": [
+          "Validation définitive",
+          "Signature décompte",
+          "Autorisation paiement"
+        ]
+      },
+      {
+        "ordre": 8,
+        "nom": "Génération décompte final",
+        "description": "Génération document final",
+        "responsable": "SYSTEME",
+        "delai_jours": 1,
+        "actions": [
+          "Génération document Word",
+          "Export PDF final",
+          "Archivage dossier"
+        ]
+      }
+    ]
+  },
+  "workflow_gpa": {
+    "nom": "Module GPA - Garantie Parfait Achèvement",
+    "description": "Workflow de gestion garantie parfait achèvement",
+    "etapes": [
+      {
+        "ordre": 1,
+        "nom": "Réception réclamation locataire",
+        "description": "Interface avec gestion locative",
+        "responsable": "GESTION_LOCATIVE",
+        "delai_jours": 0,
+        "actions": [
+          "Saisie réclamation locataire",
+          "Classification par type",
+          "Évaluation urgence"
+        ]
+      },
+      {
+        "ordre": 2,
+        "nom": "Transmission ACO",
+        "description": "Transmission automatique à l'ACO",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Notification automatique ACO",
+          "Création fiche intervention",
+          "Intégration module GPA"
+        ]
+      },
+      {
+        "ordre": 3,
+        "nom": "Analyse et diagnostic",
+        "description": "Analyse par ACO et diagnostic",
+        "responsable": "ACO",
+        "delai_jours": 2,
+        "actions": [
+          "Analyse nature réclamation",
+          "Visite sur site si nécessaire",
+          "Diagnostic responsabilité"
+        ]
+      },
+      {
+        "ordre": 4,
+        "nom": "Transmission entreprise",
+        "description": "Transmission à l'entreprise responsable",
+        "responsable": "ACO",
+        "delai_jours": 1,
+        "actions": [
+          "Identification entreprise responsable",
+          "Transmission demande intervention",
+          "Définition délai intervention"
+        ]
+      },
+      {
+        "ordre": 5,
+        "nom": "Intervention entreprise",
+        "description": "Intervention de l'entreprise",
+        "responsable": "ENTREPRISE",
+        "delai_jours": 15,
+        "actions": [
+          "Intervention sur site",
+          "Résolution problème",
+          "Compte-rendu intervention"
+        ]
+      },
+      {
+        "ordre": 6,
+        "nom": "Contrôle résolution",
+        "description": "Contrôle qualité de la résolution",
+        "responsable": "ACO",
+        "delai_jours": 3,
+        "actions": [
+          "Vérification intervention",
+          "Validation qualité",
+          "Satisfaction locataire"
+        ]
+      },
+      {
+        "ordre": 7,
+        "nom": "Clôture fiche",
+        "description": "Clôture définitive de la fiche",
+        "responsable": "ACO",
+        "delai_jours": 1,
+        "actions": [
+          "Validation résolution",
+          "Clôture fiche intervention",
+          "Mise à jour statistiques"
+        ]
+      }
+    ],
+    "types_reclamations": [
+      {
+        "type": "PLOMBERIE",
+        "delai_intervention": 48,
+        "unite": "HEURES",
+        "entreprises_type": ["PLOMBIER", "SANITAIRE"]
+      },
+      {
+        "type": "ELECTRICITE",
+        "delai_intervention": 24,
+        "unite": "HEURES",
+        "entreprises_type": ["ELECTRICIEN"]
+      },
+      {
+        "type": "PEINTURE",
+        "delai_intervention": 7,
+        "unite": "JOURS",
+        "entreprises_type": ["PEINTRE", "DECORATION"]
+      },
+      {
+        "type": "MENUISERIE",
+        "delai_intervention": 5,
+        "unite": "JOURS",
+        "entreprises_type": ["MENUISIER", "FERMETURES"]
+      }
+    ]
+  },
+  "workflow_cloture": {
+    "nom": "Module Clôture - Finalisation Opération",
+    "description": "Workflow de clôture définitive d'une opération",
+    "checklist_obligatoire": [
+      {
+        "item": "Toutes phases validées",
+        "description": "Vérification que toutes les phases sont au statut VALIDEE",
+        "responsable": "SYSTEME",
+        "condition": "COUNT(phases WHERE statut != 'VALIDEE') = 0"
+      },
+      {
+        "item": "Documents archivés",
+        "description": "Tous les documents sont archivés dans le dossier opération",
+        "responsable": "ACO",
+        "condition": "MANUEL"
+      },
+      {
+        "item": "Soldes financiers validés",
+        "description": "Tous les soldes financiers sont apurés",
+        "responsable": "FINANCIER",
+        "condition": "solde_operation = 0"
+      },
+      {
+        "item": "Retenue de garantie levée",
+        "description": "La retenue de garantie a été levée",
+        "responsable": "FINANCIER",
+        "condition": "retenue_garantie_levee = TRUE"
+      },
+      {
+        "item": "Bilan opération rédigé",
+        "description": "Le bilan final de l'opération est rédigé",
+        "responsable": "ACO",
+        "condition": "MANUEL"
+      },
+      {
+        "item": "Lessons learned documentées",
+        "description": "Les enseignements sont documentés",
+        "responsable": "ACO",
+        "condition": "MANUEL"
+      }
+    ],
+    "etapes": [
+      {
+        "ordre": 1,
+        "nom": "Vérification checklist",
+        "description": "Vérification automatique de la checklist",
+        "responsable": "SYSTEME",
+        "delai_jours": 0,
+        "actions": [
+          "Contrôle automatique conditions",
+          "Identification points bloquants",
+          "Génération rapport conformité"
+        ]
+      },
+      {
+        "ordre": 2,
+        "nom": "Génération bilan financier",
+        "description": "Génération automatique du bilan financier",
+        "responsable": "SYSTEME",
+        "delai_jours": 1,
+        "actions": [
+          "Calcul écarts budget initial/final",
+          "Calcul écarts planning initial/réel",
+          "Synthèse indicateurs performance"
+        ]
+      },
+      {
+        "ordre": 3,
+        "nom": "Rédaction bilan opération",
+        "description": "Rédaction du bilan par l'ACO",
+        "responsable": "ACO",
+        "delai_jours": 5,
+        "actions": [
+          "Analyse performance opération",
+          "Identification points d'amélioration",
+          "Rédaction lessons learned"
+        ]
+      },
+      {
+        "ordre": 4,
+        "nom": "Validation hiérarchique",
+        "description": "Validation par la hiérarchie",
+        "responsable": "HIERARCHIE",
+        "delai_jours": 3,
+        "actions": [
+          "Examen bilan opération",
+          "Validation clôture",
+          "Autorisation archivage définitif"
+        ]
+      },
+      {
+        "ordre": 5,
+        "nom": "Archivage définitif",
+        "description": "Archivage définitif de l'opération",
+        "responsable": "SYSTEME",
+        "delai_jours": 1,
+        "actions": [
+          "Sauvegarde tous documents",
+          "Export données historiques",
+          "Changement statut CLOTUREE"
+        ]
+      }
+    ],
+    "indicateurs_performance": [
+      {
+        "nom": "Respect Budget",
+        "calcul": "(budget_final - budget_initial) / budget_initial * 100",
+        "seuil_bon": 5,
+        "seuil_acceptable": 10
+      },
+      {
+        "nom": "Respect Planning",
+        "calcul": "(duree_reelle - duree_prevue) / duree_prevue * 100",
+        "seuil_bon": 5,
+        "seuil_acceptable": 15
+      },
+      {
+        "nom": "Qualité Livraison",
+        "calcul": "nombre_reclamations_gpa / nombre_logements",
+        "seuil_bon": 0.5,
+        "seuil_acceptable": 1.0
+      }
+    ]
+  }
+}
